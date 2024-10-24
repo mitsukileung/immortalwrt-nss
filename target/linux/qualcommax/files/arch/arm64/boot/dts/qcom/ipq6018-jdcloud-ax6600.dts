@@ -72,6 +72,7 @@
 
 &tlmm {
 	gpio-reserved-ranges = <20 1>;
+	compatible = "qcom,ipq6018-pinctrl";
 
 	button_pins: button_pins {
 		mux {
@@ -159,14 +160,6 @@
 			bias-pull-down;
 		};
 	};
-
-	usb_power: usb_power {
-		pins = "gpio23";
-		function = "gpio";
-		drive-strength = <8>;
-		output-high;
-		bias-pull-up;
-	};
 };
 
 &blsp1_uart3 {
@@ -225,9 +218,7 @@
 };
 
 &usb3 {
-	pinctrl-0 = <&usb_power>;
-	pinctrl-names = "default";
-	status = "ok";
+	status = "okay";
 };
 
 &mdio {
